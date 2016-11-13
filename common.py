@@ -2,18 +2,62 @@ import csv
 import sys
 
 HEADER='Date,Payee,Category,Memo,Outflow,Inflow'
-CAT_GROCERIES   = 'Groceries'
-CAT_EATING_OUT  = 'Eating out'
-CAT_UNKNOWN     = 'Others'
+CAT_GROCERIES       = 'Groceries'
+CAT_EATING_OUT      = 'Eating out'
+CAT_IVAN            = 'Ivan'
+CAT_SHOPPING        = 'Shopping'
+CAT_CLAIMABLE       = 'Claimable'
+CAT_TAXI            = 'Taxi'
+CAT_PERSONAL_CARE   = 'Personal care'
+CAT_UNKNOWN         = 'Others'
 
-CATEGORIES = {
-        'COLD STORAGE'  : CAT_GROCERIES,
-        'BREADTALK'     : CAT_GROCERIES,
-        'STARBUCKS'     : CAT_EATING_OUT,
-        'COSTA COFFEE'  : CAT_EATING_OUT,
-        'AJISEN RAMEN'  : CAT_EATING_OUT,
-        'MCDONALD'      : CAT_EATING_OUT,
+CATEGORY_LISTS = {
+    CAT_GROCERIES      : (
+        'COLD STORAGE',
+        'BREADTALK',
+        'PAUL BAKERY',
+        'MMMM!',
+        'FAIRPRICE',
+        'SHENG SIONG',
+        'PHOON HUAT',
+        'GUARDIAN',
+        "WATSON'S",
+    ),
+    CAT_EATING_OUT      : (
+        'STARBUCKS',
+        'COSTA COFFEE',
+        'AJISEN RAMEN',
+        'MCDONALD',
+        'IPPUDO',
+        'HUGGS',
+        'SUBWAY',
+    ),
+    CAT_IVAN            : (
+        'MOTHERCARE',
+    ),
+    CAT_TAXI            : (
+        'GRAB COM',
+    ),
+    CAT_SHOPPING        : (
+        'TAKASHIMAYA',
+        'QOO10',
+        'UNIQLO',
+        'ROYCE',
+        'OG - ',
+        'MARKS & SPENCER',
+        'GOODSTUFF.SG',
+        'METRO-',
+    ),
+    CAT_PERSONAL_CARE   : (
+        'WAN YANG FOOT',
+        'TONI&GUY',
+    ),
+    CAT_CLAIMABLE       : (
+        'TP DENTAL',
+    ),
 }
+
+CATEGORIES = dict([(label, c) for c in CATEGORY_LISTS for label in CATEGORY_LISTS[c]])
 
 class YnabConverter():
     
