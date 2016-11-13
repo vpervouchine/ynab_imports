@@ -31,9 +31,11 @@ CATEGORY_LISTS = {
         'IPPUDO',
         'HUGGS',
         'SUBWAY',
+        'THE CHOP HOUSE',
     ),
     CAT_IVAN            : (
         'MOTHERCARE',
+        "TOYS'R'US",
     ),
     CAT_TAXI            : (
         'GRAB COM',
